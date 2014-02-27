@@ -127,13 +127,38 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="DAL\SchoolConfiguration.cs" />
     <Compile Include="DAL\SchoolContext.cs" />
     <Compile Include="DAL\SchoolInitializer.cs" />
+    <Compile Include="DAL\SchoolInterceptorLogging.cs" />
+    <Compile Include="DAL\SchoolInterceptorTransientErrors.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\Logger.cs" />
+    <Compile Include="Migrations\201402211446174_InitialCreate.cs" />
+    <Compile Include="Migrations\201402211446174_InitialCreate.Designer.cs">
+      <DependentUpon>201402211446174_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402251430017_MaxLengthOnNames.cs" />
+    <Compile Include="Migrations\201402251430017_MaxLengthOnNames.Designer.cs">
+      <DependentUpon>201402251430017_MaxLengthOnNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402251438318_ColumnFirstName.cs" />
+    <Compile Include="Migrations\201402251438318_ColumnFirstName.Designer.cs">
+      <DependentUpon>201402251438318_ColumnFirstName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201402271413477_Chap5.cs" />
+    <Compile Include="Migrations\201402271413477_Chap5.Designer.cs">
+      <DependentUpon>201402271413477_Chap5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\OfficeAssignment.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EnrollmentDateGroup.cs" />
@@ -147,6 +172,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\gm-conu.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -154,7 +180,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -175,7 +203,6 @@
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -183,6 +210,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201402211446174_InitialCreate.resx">
+      <DependentUpon>201402211446174_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402251430017_MaxLengthOnNames.resx">
+      <DependentUpon>201402251430017_MaxLengthOnNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402251438318_ColumnFirstName.resx">
+      <DependentUpon>201402251438318_ColumnFirstName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402271413477_Chap5.resx">
+      <DependentUpon>201402271413477_Chap5.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
